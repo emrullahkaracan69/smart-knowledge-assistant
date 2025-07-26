@@ -36,9 +36,7 @@ if not GROQ_API_KEY:
 # Model configurations
 GROQ_MODELS = {
     "llama3-8b-8192": "Llama 3 8B (Balanced)",
-    "llama3-70b-8192": "Llama 3 70B (Most Powerful)", 
-    "whisper-large-v3-turbo": "Gemma 7B (Fastest & Most Stable)",
-    "mixtral-8x7b-32768": "Mixtral 8x7B (Good for long texts)"
+    "llama3-70b-8192": "Llama 3 70B (Most Powerful)"
 }
 
 # Text chunking settings
