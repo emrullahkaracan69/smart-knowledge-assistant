@@ -21,12 +21,19 @@ EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 EMBEDDING_DIMENSION = 384
 
 # Groq API Configuration
-GROQ_API_KEY = (
-    os.getenv("GROQ_API_KEY") or 
-    st.secrets.get("GROQ_API_KEY", None) if "secrets" in dir(st) else None
-)
+# Try to get API key from environment variable
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-# Updated model names to ensure compatibility
+# If not found in env, try Streamlit secrets (will be handled in app.py)
+if not GROQ_API_KEY:
+    try:
+        import streamlit as st
+        GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", None)
+    except:
+        # If streamlit is not available or secrets not accessible, leave as None
+        pass
+
+# Model configurations
 GROQ_MODELS = {
     "llama3-8b-8192": "Llama 3 8B (Balanced)",
     "llama3-70b-8192": "Llama 3 70B (Most Powerful)", 
@@ -40,7 +47,7 @@ CHUNK_OVERLAP = 100
 
 # RAG settings
 TOP_K_RESULTS = 5
-TEMPERATURE = 0.3  # Lower temperature for more consistent answers
+TEMPERATURE = 0.3
 MAX_ANSWER_LENGTH = 200
 
 # Streamlit settings
