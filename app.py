@@ -188,16 +188,27 @@ def render_main_content():
         with st.chat_message("assistant"):
             message_placeholder = st.empty()
             
-            with st.spinner("Analyzing documents and generating answer..."):
-                start_time = time.time()
+            try:
+                with st.spinner("Analyzing documents and generating answer..."):
+                    start_time = time.time()
+                    
+                    rag_engine = st.session_state.rag_engine
+                    result = rag_engine.answer_question(prompt)
+                    
+                    end_time = time.time()
+                    response_time = f"{end_time - start_time:.2f}s"
                 
-                rag_engine = st.session_state.rag_engine
-                result = rag_engine.answer_question(prompt)
+                message_placeholder.markdown(result["answer"])
                 
-                end_time = time.time()
-                response_time = f"{end_time - start_time:.2f}s"
-            
-            message_placeholder.markdown(result["answer"])
+            except Exception as e:
+                error_msg = f"⚠️ An error occurred: {str(e)}\n\nPlease try:\n- Selecting a different model\n- Uploading documents if you haven't\n- Asking a simpler question"
+                message_placeholder.error(error_msg)
+                result = {
+                    "answer": error_msg,
+                    "sources": [],
+                    "context_used": []
+                }
+                response_time = "N/A"
 
         assistant_message = {
             "role": "assistant",
