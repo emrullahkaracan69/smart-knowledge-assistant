@@ -8,3 +8,4 @@ sentence-transformers==2.7.0
 pypdf==4.2.0
 wikipedia==1.4.0
 requests==2.31.0
+pysqlite3-binary
