@@ -21,7 +21,10 @@ EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 EMBEDDING_DIMENSION = 384
 
 # Groq API Configuration
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_API_KEY = (
+    os.getenv("GROQ_API_KEY") or 
+    st.secrets.get("GROQ_API_KEY", None) if "secrets" in dir(st) else None
+)
 
 # Updated model names to ensure compatibility
 GROQ_MODELS = {
