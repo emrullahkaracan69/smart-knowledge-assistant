@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Sanal Ortam
+venv/
+.venv/
+env/
+.env/
+
+# Hassas Bilgiler
+.env
+*.env
+
+# IDE Dosyaları
+.idea/
+.vscode/
+
+# Veri ve Veritabanı
+data/chroma_db/
