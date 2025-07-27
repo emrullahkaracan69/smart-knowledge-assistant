@@ -1,4 +1,3 @@
-```markdown
 # Smart Knowledge Assistant
 
 A professional document Q&A system powered by Retrieval-Augmented Generation (RAG) technology. Upload documents and ask questions to get AI-powered answers based on your content.
@@ -68,30 +67,7 @@ Key configuration parameters in `src/config.py`:
 - Requires active internet connection for LLM API
 - Document storage is temporary on Streamlit Cloud
 
-## Project Structure
 
-```
-smart-knowledge-assistant/
-├── app.py                 # Main application entry point
-├── requirements.txt       # Python dependencies
-├── src/
-│   ├── config.py         # Configuration settings
-│   ├── data_loader.py    # Document loading utilities
-│   ├── rag_engine.py     # RAG pipeline implementation
-│   └── vector_store.py   # Vector database management
-└── data/
-    └── documents/        # Uploaded documents directory
-```
-
-## Contributing
-
-Contributions are welcome. Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
 
 ## License
 
@@ -103,4 +79,3 @@ This project is licensed under the MIT License.
 Email: karacanemrullah69@gmail.com
 
 For questions, suggestions, or issues, please feel free to reach out via email or create an issue on GitHub.
-```
