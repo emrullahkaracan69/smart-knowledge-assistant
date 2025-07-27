@@ -78,4 +78,5 @@ This project is licensed under the MIT License.
 **Emrullah Karacan**  
 Email: karacanemrullah69@gmail.com
 
-For questions, suggestions, or issues, please feel free to reach out via email or create an issue on GitHub.
+For questions, suggestions, or issues, please feel free to reach out via email or create an issue on GitHub. During the development phase of the project, many technical enhancements have been attempted, and since new improvements will continue to be made, there may be files or functions currently not in use within the project.
+
